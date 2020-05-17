@@ -1,0 +1,12 @@
+from pytube import YouTube
+
+myvideo = YouTube(input("Enter the URL you want to download: "))
+
+selection = input('Please enter the selection audio or video: ')
+
+if selection.lower() == 'audio':
+    myvideo.streams.get_audio_only().download()
+else:
+    myvideo.streams.get_highest_resolution().download()
+
+print("Download complete!!")
